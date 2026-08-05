@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio_Napoletano // Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- BOOT SCREEN -->
+    <div id="boot">
+        <div class="boot-logo">ANTONIO<span>_</span>NAPOLETANO.EXE</div>
+        <div class="boot-console" id="bootConsole"></div>
+        <div class="boot-bar">
+            <div class="boot-bar-fill" id="bootFill"></div>
+        </div>
+        <div class="boot-hint">PRESS ANYWHERE TO SKIP</div>
+    </div>
+
+    <div class="crt-overlay"></div>
+    <div class="vignette"></div>
+    <canvas id="pixel-field"></canvas>
+    <canvas id="cursor-trail"></canvas>
+
+    <header>
+        <nav>
+            <div class="logo"><span class="dot"></span>ANTONIO_NAPOLETANO</div>
+
+            <button class="burger-btn" id="burgerBtn" aria-label="Apri menu" aria-expanded="false">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#about" data-close>About</a>
+                <a href="#work" data-close>Work</a>
+                <a href="#skills" data-close>Skills</a>
+                <a href="#contact" class="nav-cta mobile-only" data-close>Let's Talk</a>
+            </div>
+
+            <a href="#contact" class="nav-cta desktop-only">Let's Talk</a>
+        </nav>
+    </header>
+
+    <div class="nav-scrim" id="navScrim"></div>
+
+    <!-- MARQUEE TICKER — signature arcade element -->
+    <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+            <span>★ HIGH SCORE 128400</span>
+            <span>★ PLAYER 1: ANTONIO NAPOLETANO</span>
+            <span>★ UI Designer</span>
+            <span>★ HIGH SCORE 128400</span>
+            <span>★ PLAYER 1: ANTONIO NAPOLETANO</span>
+            <span>★ Front-End DEVELOPER</span>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrap hero-grid">
+            <div>
+                <div class="hero-greet" id="ciao">Ciao, sono</div>
+                <h1 class="hero-name" data-text="ANTONIO NAPOLETANO">ANTONIO <span class="accent">NAPOLETANO</span></h1>
+                <div class="hero-role"><span id="roleText">Front-End Developer</span><span class="cursor-blink"></span>
+                </div>
+                <p class="hero-desc">Trasformo idee complesse in applicazioni web scalabili, unendo un back-end robusto
+                    a un'esperienza front-end curata, performante e moderna.</p>
+                <div class="btn-row">
+                    <a href="#work" class="pbtn">▶ Vedi i Progetti</a>
+                    <a href="#contact" class="pbtn ghost">✉ Contattami</a>
+                </div>
+            </div>
+
+            <div class="term">
+                <div class="term-bar"><span></span><span></span><span></span><em>guest@antonio.Dev</em></div>
+                <div class="term-body" id="termBody"></div>
+            </div>
+        </div>
+
+        <div class="scroll-hint"><span>SCROLL</span><span class="arrow"></span></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <div class="eyebrow">// About</div>
+                <h2 class="sec-title">Character Sheet</h2>
+            </div>
+            <div class="about-grid">
+                <div class="status-panel reveal">
+                    <div class="status-title">◆ STATUS WINDOW</div>
+                    <div class="stat">
+                        <div class="stat-label"><span>JavaScript </span><span>92%</span></div>
+                        <div class="stat-track">
+                            <div class="stat-fill" data-value="92"></div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label"><span>React </span><span>65%</span></div>
+                        <div class="stat-track">
+                            <div class="stat-fill" data-value="65"></div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label"><span>HTML & CSS</span><span>95%</span></div>
+                        <div class="stat-track">
+                            <div class="stat-fill" data-value="95"></div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label"><span>UI Design</span><span>90%</span></div>
+                        <div class="stat-track">
+                            <div class="stat-fill" data-value="90"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-copy reveal">
+                    <p>Sono <strong>Antonio Napoletano</strong>, un Full-Stack Developer appassionato di tecnologia e
+                        dello sviluppo di soluzioni digitali complete, dall'architettura del database fino
+                        all'interfaccia utente.</p>
+                    <p>Mi dedico alla scrittura di codice pulito, manutenibile ed efficiente, ponendo grande attenzione
+                        alle performance e all'usabilità complessiva del software.</p>
+                    <p>Sempre alla ricerca di nuove sfide per accrescere le mie competenze e dare vita a prodotti
+                        digitali innovativi.</p>
+                    <div class="tag-row">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="work">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <div class="eyebrow">// Selected Work</div>
+                <h2 class="sec-title">Insert Cartridge</h2>
+            </div>
+            <div class="proj-grid">
+                <div class="cart reveal">
+                    <div class="cart-label" style="background:var(--magenta);">FrontEnd - <br>Shopify Integrated</div>
+                    <div class="cart-body">
+                        <span class="cart-tag">PORTFOLIO</span>
+                        <h3 class="cart-title">E-Commerce Platform</h3>
+                        <p class="cart-desc">Portfolio website for an Artist (Leonardo Napoletano) with Shopify integration.</p>
+                        <div class="cart-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Shopify</span><span>Responsive design</span></div>
+                        <a href="https://github.com/antoniowork00" target="_blank" rel="noopener"
+                            class="cart-link"><span class="blip"></span>GITHUB REPO</a>
+                    </div>
+                </div>
+
+                <div class="cart reveal">
+                    <div class="cart-label" style="background:var(--cyan);">Website</div>
+                    <div class="cart-body">
+                        <span class="cart-tag">Travel agency</span>
+                        <h3 class="cart-title">Md Holidays Site</h3>
+                        <p class="cart-desc">full website for a travel agency (MD HOLIDAYS in Greece)</p>
+                        <div class="cart-stack"><span>Html</span><span>Css</span><span>Figma</span></div>
+                        <a href="https://github.com/antoniowork00/MD-Holidays-Site-Idea" target="_blank" rel="noopener"
+                            class="cart-link"><span class="blip"></span>GITHUB REPO</a>
+                    </div>
+                </div>
+
+                <div class="cart reveal">
+                    <div class="cart-label" style="background:var(--yellow);">Court<br>Visualization</div>
+                    <div class="cart-body">
+                        <span class="cart-tag">Court visualization on maps</span>
+                        <h3 class="cart-title">CanvasCourt</h3>
+                        <p class="cart-desc">Interactive visualization of court data on maps.</p>
+                        <div class="cart-stack"><span>Html</span><span>Css</span><span>JavaScript</span><span>Figma</span><span>leaflet maps</span></div>
+                        <a href="https://github.com/antoniowork00/CanvasCourt" target="_blank" rel="noopener"
+                            class="cart-link"><span class="blip"></span>GITHUB REPO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <div class="eyebrow">// Toolkit</div>
+                <h2 class="sec-title">Inventory</h2>
+            </div>
+
+            <div class="skills-grid reveal">
+
+                <!-- JavaScript -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="js.png" alt="JavaScript Icon" width="60" height="40">
+                    </div>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+
+                <!-- React.js -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="react.png" alt="React Icon" width="48" height="48">
+                    </div>
+                    <span class="skill-name">React.js</span>
+                </div>
+
+                <!-- HTML5 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="html.png" alt="HTML5 Icon" width="48" height="48">
+                    </div>
+                    <span class="skill-name">HTML5</span>
+                </div>
+
+                <!-- CSS3 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="css.png" alt="CSS3 Icon" width="48" height="48">
+                    </div>
+                    <span class="skill-name">CSS3</span>
+                </div>
+
+                <!-- Tailwind CSS -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="tailwind.png" alt="Tailwind CSS Icon" width="48" height="48">
+                    </div>
+                    <span class="skill-name">Tailwind</span>
+                </div>
+
+                <!-- Figma -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="figma.png" alt="Figma Icon">
+                    </div>
+                    <span class="skill-name">Figma</span>
+                </div>
+
+                <!-- Git & GitHub -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="github.png" alt="Git & GitHub Icon" width="48" height="48">
+                    </div>
+                    <span class="skill-name">Git & GitHub</span>
+                </div>
+
+                <!-- Java -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="java.png" alt="Java Icon" width="48" height="48">
+                    </div>
+                    <span class="skill-name">Java</span>
+                </div>
+
+                <!-- C++ -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="cpp.png" alt="C++ Icon" width="48" height="48">
+                    </div>
+                    <span class="skill-name">C++</span>
+                </div>
+
+                <!-- Blender -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <img src="blender.png" alt="Blender Icon" width="60" height="30">
+                    </div>
+                    <span class="skill-name">Blender</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="wrap">
+            <div class="sec-head reveal">
+                <div class="eyebrow">// Contact</div>
+                <h2 class="sec-title">New Quest: Say Hello</h2>
+            </div>
+
+            <div class="contact-box reveal">
+                <div class="dialog-lines">
+                    <h3>◆ DIALOGUE</h3>
+                    <p><span>AI / NPC:</span> Vuoi collaborare a un progetto o hai una domanda?</p>
+                    <p><span>Tu:</span> Sì, vorrei mettermi in contatto.</p>
+                    <p><span>IA / NPC:</span> Compila il form sottostante o scrivimi direttamente via email. Ti
+                        risponderò al più presto!</p>
+                </div>
+                <form id="contactForm">
+                    <div class="field">
+                        <label for="name">Nome</label>
+                        <!-- Aggiunto name="name" -->
+                        <input id="name" name="name" type="text" placeholder="Il tuo nome" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <!-- Aggiunto name="email" -->
+                        <input id="email" name="email" type="email" placeholder="tuemail@esempio.com" required>
+                    </div>
+                    <div class="field">
+                        <label for="msg">Messaggio</label>
+                        <!-- Aggiunto name="message" -->
+                        <textarea id="msg" name="message" placeholder="Raccontami del tuo progetto..."
+                            required></textarea>
+                    </div>
+                    <!-- Aggiunto lo span.btn-text per l'animazione di caricamento -->
+                    <button type="submit" class="submit-btn"><span class="btn-text">Invia Messaggio</span> ▶</button>
+                    <div class="sent-msg" id="sentMsg"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap foot-row">
+            <div class="foot-copy">© 2026 Antonio Napoletano - Costruito pixel per pixel.</div>
+            <div class="foot-social">
+                <a href="https://github.com/antoniowork00" title="GitHub" class="pix-icon pix-github"
+                    aria-label="GitHub">
+                    <svg viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges">
+                        <path fill="currentColor"
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/antonio-napoletano-4b8746381" title="LinkedIn"
+                    class="pix-icon pix-linkedin" aria-label="LinkedIn">
+                    <svg viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges">
+                        <path fill="currentColor"
+                            d="M14.82 0H1.18A1.18 1.18 0 000 1.18v13.64A1.18 1.18 0 001.18 16h13.64a1.18 1.18 0 001.18-1.18V1.18A1.18 1.18 0 0014.82 0zM4.74 13.5H2.37V6h2.37v7.5zM3.56 5a1.38 1.38 0 110-2.75 1.38 1.38 0 010 2.75zm10.24 8.5h-2.37V9.77c0-.89-.02-2.04-1.24-2.04-1.24 0-1.43.97-1.43 1.97v3.8H6.75V6h2.28v1.04h.03c.32-.6 1.11-1.24 2.28-1.24 2.44 0 2.89 1.61 2.89 3.7v3.98z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/anto.dev.00" title="Instagram" class="pix-icon pix-instagram"
+                    aria-label="Instagram">
+                    <svg viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges">
+                        <path fill="currentColor"
+                            d="M8 1.44c2.14 0 2.39.01 3.23.05.78.04 1.21.16 1.49.27.38.15.65.33.94.62.29.29.47.56.62.94.11.28.23.71.27 1.49.04.84.05 1.09.05 3.23s-.01 2.39-.05 3.23c-.04.78-.16 1.21-.27 1.49-.15.38-.33.65-.62.94-.29.29-.56.47-.94.62-.28.11-.71.23-1.49.27-.84.04-1.09.05-3.23.05s-2.39-.01-3.23-.05c-.78-.04-1.21-.16-1.49-.27-.38-.15-.65-.33-.94-.62-.29-.29-.47-.56-.62-.94-.11-.28-.23-.71-.27-1.49-.04-.84-.05-1.09-.05-3.23s.01-2.39.05-3.23c.04-.78.16-1.21.27-1.49.15-.38.33-.65.62-.94.29-.29.56-.47.94-.62.28-.11.71-.23 1.49-.27.84-.04 1.09-.05 3.23-.05M8 0C5.83 0 5.56.01 4.7.05c-.85.04-1.43.18-1.94.38-.53.2-.98.47-1.42.92-.45.44-.72.89-.92 1.42-.2.51-.34 1.09-.38 1.94C.01 5.56 0 5.83 0 8s.01 2.44.05 3.3c.04.85.18 1.43.38 1.94.2.53.47.98.92 1.42.44.45.89.72 1.42.92.51.2 1.09.34 1.94.38.86.04 1.13.05 3.3.05s2.44-.01 3.3-.05c.85-.04 1.43-.18 1.94-.38.53-.2.98-.47 1.42-.92.45-.44.72-.89.92-1.42.2-.51.34-1.09.38-1.94.04-.86.05-1.13.05-3.3s-.01-2.44-.05-3.3c-.04-.85-.18-1.43-.38-1.94-.2-.53-.47-.98-.92-1.42-.44-.45-.89-.72-1.42-.92-.51-.2-1.09-.34-1.94-.38C10.44.01 10.17 0 8 0zm0 3.88a4.12 4.12 0 100 8.24 4.12 4.12 0 000-8.24zM8 10.5A2.5 2.5 0 118 5.5a2.5 2.5 0 010 5zm5.34-7.43a.96.96 0 100 1.92.96.96 0 000-1.92z" />
+                    </svg>
+                </a>
+                <a href="mailto:antonio.work.200309@gmail.com" title="Email" class="pix-icon pix-email"
+                    aria-label="Email">
+                    <svg viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges">
+                        <path fill="currentColor"
+                            d="M14 2H2C.9 2 0 2.9 0 4v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 2l-6 3.75L2 4h12zM2 12V6l6 3.75L14 6v6H2z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
